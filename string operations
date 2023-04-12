@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+void compare(char str1[],char str2[]);
+void concat(char str1[],char str2[]);
+void length(char str1[]);
+void main()
+{
+	char str1[50],str2[50];
+	int ch;
+	printf("Enter the choice\n1:compare\t 2:concatenate\t 3:length\n");
+	scanf("%d",&ch);
+	switch(ch)
+	{
+		case 1:printf("Enter string 1:\t");
+		scanf("%s",str1);
+		printf("Enter string 2:\t");
+		scanf("%s",str2);
+		compare(str1,str2);
+		break;
+		case 2:printf("Enter string1:\t");
+		scanf("%s",str1);
+		printf("Enter string2:\t");
+		scanf("%s",str2);
+		concat(str1,str2);
+		break;
+		case 3:printf("enter a string:\t");
+		scanf("%s",str1);
+		length(str1);
+		break;
+		default :printf("Enter invalid choice");
+	}
+}
+void compare(char str1[],char str2[])
+{
+	if(strcmp(str1,str2)==0)
+	printf("given two string are same\n");
+	else
+	printf("given two string are not same\n");
+}
+void concat(char str1[],char str2[])
+{
+	strcat(str1,str2);
+	printf("resultant string is: %s\n",str1);
+	
+}
+void length(char str1[])
+{
+	int len;
+	len=strlen(str1);
+	printf("The string length is: %d\n",len);
+}
