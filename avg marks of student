@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+struct student
+{
+	char name[20];
+	int m1,m2,m3,total;
+}s[20];
+void main()
+{
+	int i,n;
+	float classtotal=0,avg;
+	printf("Enter the no of student:\t");
+	scanf("%d",&n);
+	for(i=0;i<=n-1;i++)
+	{
+		printf("Enter the name,marks1,marks2 and marks3\t");
+		scanf("%s%d%d%d",&s[i].name,&s[i].m1,&s[i].m2,&s[i].m3);
+		s[i].total=s[i].name+s[i].m1+s[i].m2+s[i].m3;
+		classtotal=classtotal+s[i].total;
+	}
+	printf("student details are:\n");
+	printf("name\tm1\tm2\tm3\n");
+	printf("___________________\n");
+	for(i=0;i<=n-1;i++)
+	{
+		printf("%s\t%d\t%d\t%d\n",s[i].name,s[i].m1,s[i].m2,s[i].m3);
+	}
+	for(i=0;i<=n-1;i++)
+	{
+	avg=classtotal/n;
+	printf("\n Average of class = %.2f\n",avg);
+	printf("\nstudent scoring above avg.2%f\n\n");
+}
+	for(i=0;i<=n-1;i++)
+	{
+		if(s[i].total>avg)
+		printf("%s %d\n",s[i].name,s[i].total);
+	}
+	printf("\n student scoring below avg.\n\n");
+	for(i=0;i<=n-1;i++)
+	{
+		if(s[i].total<avg)
+		printf("%s %d\n",s[i].name,s[i].total);
+	}
+}
