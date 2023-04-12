@@ -1,0 +1,59 @@
+#include<stdio.h> 
+int main() 
+{ int a[10][10], b[10][10], c[10][10], i, j, k, n, m, sum; 
+printf(" Enter the Numbers of Row & coloumn : "); 
+scanf("%d%d",&m,&n); 
+printf("\n Enter the Element of First Matrix : \n");
+ for(i=0;i<m;i++) 
+{
+ for(j=0;j<n;j++)
+{
+scanf("%d",&a[i][j]); 
+}
+ } 
+printf("enter the second matrix : \n");
+ for(i=0;i<m;i++) 
+{
+ for(j=0;j<n;j++) 
+{
+ scanf("%d",&b[i][j]); 
+}
+ } printf("the a matrixs are\n");
+ for(i=0;i<m;i++)
+ {
+ 	for(j=0;j<n;j++)
+ 	{
+ 		printf("\t %d",a[i][j]);
+	 }
+	 printf("\n");
+ }
+ printf("the b matrix are\n");
+ for(i=0;i<m;i++)
+ {
+ 	for(j=0;j<n;j++)
+ 	{
+ 		printf("\t %d",b[i][j]);
+	 }
+	 printf("\n");
+ }
+for(i=0;i<m;i++) 
+{
+ for(j=0;j<n;j++) 
+{ 
+sum=0;
+ for(k=0;k<m;k++) 
+{
+ sum=sum+(a[i][k]*b[k][j]); 
+}
+ c[i][j]=sum; 
+} } 
+printf("\n\n Multiplicaiton of Two Matrix are : \n");
+ for(i=0;i<m;i++) 
+{
+ for(j=0;j<n;j++) 
+	{ 	 
+ 	printf("\t %d ",c[i][j]); 
+} printf(" \n "); 
+}
+ return(0); 
+}
